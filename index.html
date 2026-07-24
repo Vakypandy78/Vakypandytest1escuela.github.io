@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Web - Registro y Control Escolar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="function.js" defer></script>
+</head>
+<body>
+
+    <!-- 1. BARRA / CABECERA AZUL -->
+<header id="barra-cabecera" class="cabecera-azul">
+    <div class="cabecera-contenido">
+        <!-- LOGO Y TÍTULO INSTITUCIONAL -->
+        <div class="brand-container">
+            <img src="image/logo.webp" alt="Logo Escuela" class="logo-escuela">
+            <div class="texto-cabecera">
+                <span class="subtitulo-escuela">Unidad Educativa Estatal</span>
+                <h2 class="nombre-escuela">19 de Abril</h2>
+            </div>
+        </div>
+
+        <!-- ÍCONOS DE ACCIÓN (DERECHA) -->
+        <div class="iconos-cabecera">
+            <button class="btn-icono" title="Notificaciones">
+                <span class="sprite-icon icon-campana"></span>
+            </button>
+            <button class="btn-icono" title="Perfil">
+                <span class="sprite-icon icon-perfil"></span>
+            </button>
+            <button class="btn-icono" title="Ajustes">
+                <span class="sprite-icon icon-ajustes"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    <!-- 2. PANEL IZQUIERDO (DESPLEGABLE) -->
+    <aside id="panel-izquierdo" class="panel-lateral panel-izq">
+        <div class="contenido-panel">
+            <!-- SECCIÓN 1: INICIAR SESIÓN -->
+            <div id="seccion-login" class="seccion-panel">
+                <div class="header-caja">INICIAR SESIÓN</div>
+                <form class="panel-form" onsubmit="event.preventDefault();">
+                    <input type="text" placeholder="Usuario" class="panel-input">
+                    <input type="password" placeholder="Contraseña" class="panel-input">
+                    <button type="submit" class="btn-accion">Entrar</button>
+                </form>
+
+                <div class="acceso-rapido-box">
+                    <div class="header-caja subtitulo-caja">ACCESO RÁPIDO</div>
+                    <div class="lista-usuarios">
+                        <div class="item-usuario">
+                            <span class="avatar">👤</span>
+                            <div class="datos-user">
+                                <strong>Nombre</strong>
+                                <small>Cédula</small>
+                            </div>
+                        </div>
+                        <div class="item-usuario">
+                            <span class="avatar">👤</span>
+                            <div class="datos-user">
+                                <strong>Nombre</strong>
+                                <small>Cédula</small>
+                            </div>
+                        </div>
+                        <div class="item-usuario">
+                            <span class="avatar">👤</span>
+                            <div class="datos-user">
+                                <strong>Nombre</strong>
+                                <small>Cédula</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 2: CREAR USUARIO -->
+            <div id="seccion-registro" class="seccion-panel oculta">
+                <div class="header-caja">CREAR USUARIO</div>
+                <form class="panel-form" onsubmit="event.preventDefault();">
+                    <input type="text" placeholder="Nombres" class="panel-input">
+                    <input type="text" placeholder="Apellidos" class="panel-input">
+                    <input type="text" placeholder="Cédula" class="panel-input">
+                    
+                    <div class="btn-agregar-foto">
+                        <span class="plus">+</span>
+                        <span>¿Agregar Foto de perfil?</span>
+                    </div>
+
+                    <input type="text" placeholder="Usuario" class="panel-input">
+                    <input type="password" placeholder="Contraseña" class="panel-input">
+                    
+                    <div class="estado-info">ℹ️ Todo en orden :)</div>
+                    <button type="submit" class="btn-accion">Crear</button>
+                </form>
+            </div>
+
+            <!-- BOTÓN ATRÁS EN LA PARTE INFERIOR -->
+            <button class="btn-atras" onclick="cerrarPaneles()">Atrás</button>
+        </div>
+    </aside>
+
+    <!-- 3. PESTAÑA / PANEL DERECHO (SOBRESALE A LA DERECHA) -->
+    <aside id="panel-derecho" class="panel-lateral panel-der">
+    </aside>
+
+    <!-- 4. CONTENIDO PRINCIPAL -->
+    <main id="contenido-principal" class="contenido-principal">
+        <div class="contenedor-hero">
+            <div class="texto-hero">
+                <h1 class="titulo-principal">
+                    Sistema Web para registro y<br>control escolar.
+                </h1>
+                <p class="descripcion">
+                    Potencia la soberanía tecnológica mediante la modernización de los servicios y protege los derechos de los niños, niñas y adolescentes.
+                </p>
+                <div class="grupo-botones">
+                    <button type="button" class="btn-hero btn-iniciar" onclick="abrirModoPanel('login')">INICIAR SESIÓN</button>
+                    <button type="button" class="btn-hero btn-crear" onclick="abrirModoPanel('registro')">CREAR USUARIO</button>
+                </div>
+            </div>
+
+            <!-- CUADRÍCULA DE IMÁGENES -->
+            <div class="galeria-grid">
+                <div class="card-photo pos-1"><img id="img-1" src="" alt="Foto escolar 1"></div>
+                <div class="card-photo pos-2"><img id="img-2" src="" alt="Foto escolar 2"></div>
+                <div class="card-photo pos-3"><img id="img-3" src="" alt="Foto escolar 3"></div>
+                <div class="card-photo pos-4"><img id="img-4" src="" alt="Foto escolar 4"></div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
